@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class ValidateEmail {
 	private static boolean validateEmail(String email) {
-		String regex = "([a-zA-Z][a-zA-Z0-9_-]*[a-z|A-Z|0-9])(@[a-zA-Z0-9]*)";
+		String regex = "([a-zA-Z][a-zA-Z0-9_-]*[a-z|A-Z|0-9])(@[a-zA-Z0-9]*)(.)([a-z]{2,})";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(email);
 		return matcher.matches();
@@ -18,9 +18,9 @@ public class ValidateEmail {
 		System.out.println("Enter the Email: ");
 		String email = scanner.nextLine();
 		if(validateEmail(email))
-			System.out.println("Valid first part of email");
+			System.out.println("Valid Email Id");
 		else
-			System.out.println("Invalid first part of email");
+			System.out.println("Invalid Email Id");
 		scanner.close();		
 	}
 
